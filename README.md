@@ -1,1 +1,1 @@
-# BrownSummerAI
+# summer_ai_week1_project
