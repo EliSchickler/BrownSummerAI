@@ -44,9 +44,9 @@ location(Place, Store) :-
     locationAll(Place, Stores),
     member(Store, Stores).
 
-dishRestaurantAll(vegetarian, [bajas, dolores, tallulahs, kabob_n_curry, andreas, east_side_pocokets, pizza_marvin, mikes, waterman_grille. red_stripe, pasta_beach, al_forno, yans, chinatown, haruki, shake_shack, heng, bess, lims]).
-dishRestaurantAll(meat, [waterman_grille, red_stripe, shake_shack, bajas, dolores, tallulahs, andreas, east_side_pocokets, heng, bess, lims, pizza_marvin, mikes, kabob_n_curry])
-dishRestaurantAll(seafood, [pasta_beach, al_forno, haruki, yans, chinatown, bajas, dolores, tallulahs])
+dishRestaurantAll(vegetarian, [bajas, dolores, tallulahs, kabob_n_curry, andreas, east_side_pocokets, pizza_marvin, mikes, waterman_grille, red_stripe, pasta_beach, al_forno, yans, chinatown, haruki, shake_shack, heng, bess, lims]).
+dishRestaurantAll(meat, [waterman_grille, red_stripe, shake_shack, bajas, dolores, tallulahs, andreas, east_side_pocokets, heng, bess, lims, pizza_marvin, mikes, kabob_n_curry]).
+dishRestaurantAll(seafood, [pasta_beach, al_forno, haruki, yans, chinatown, bajas, dolores, tallulahs]).
 
 dishRestaurant(Type, Store) :- 
     dishRestaurantAll(Type, Stores),
