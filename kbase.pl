@@ -62,5 +62,5 @@ locType(Type, Place, Store)  :-
 2. cuisine(italian, X).
 3. serves(X, snapper).
 4. serves(X, rice).
-5. isType(vegetarian, fox_point, X).
+5. locType(vegetarian, fox_point, X).
 */
