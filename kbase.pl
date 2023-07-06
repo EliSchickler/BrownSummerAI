@@ -51,9 +51,10 @@ location(Kind, Place) :-
     locationAll(Kind, Places),
     member(Place, Places).
 
-isType(Type, Place)  :-
+locType(Type, Place, Store)  :-
     location(Kind, Place),
     serves(Kind, Dish),
+    cuisine(Kind, Store),
     dish(Type, Dish).
 
 /*Questions:
@@ -61,5 +62,5 @@ isType(Type, Place)  :-
 2. cuisine(italian, X).
 3. serves(X, snapper).
 4. serves(X, rice).
-5. isType(vegetarian, fox_point).
+5. isType(vegetarian, fox_point, X).
 */
