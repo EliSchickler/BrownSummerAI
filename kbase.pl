@@ -36,31 +36,30 @@ cuisine(Kind, Store) :-
     cuisineAll(Kind, Stores),
     member(Store, Stores).
 
-location(american, wayland).
-location(burger_place, thayer_street).
-location(chinese, thayer_street).
-location(indian, thayer_street).
-locationAll(italian, [wayland, fox_point]).
-location(japanese, wayland).
-location(mediterranean, thayer_street).
-locationAll(mexican, [thayer_street, fox_point]).
-locationAll(pizza_place, [fox_point, thayer_street]).
-locationAll(thai, [thayer_street, fox_point, wayland]).
+locationAll(thayer_street, [yans, bajas, andreas, chinatown, kabob_n_curry, shake_shack, east_side_pocokets, mikes, heng]).
+locationAll(fox_point,[pizza_marvin, al_forno, bees, tallulahs, dolores]).
+locationAll(wayland,[waterman_grille, lims, haruki, pasta_beach, red_stripe]).
 
-location(Kind, Place) :-
-    locationAll(Kind, Places),
-    member(Place, Places).
+location(Place, Store) :-
+    locationAll(Place, Stores),
+    member(Store, Stores).
 
-locType(Type, Place, Store)  :-
-    location(Kind, Place),
-    serves(Kind, Dish),
-    cuisine(Kind, Store),
-    dish(Type, Dish).
+dishRestaurantAll(vegetarian, [bajas, dolores, tallulahs, kabob_n_curry, andreas, east_side_pocokets, pizza_marvin, mikes, waterman_grille. red_stripe, pasta_beach, al_forno, yans, chinatown, haruki, shake_shack, heng, bess, lims]).
+dishRestaurantAll(meat, [waterman_grille, red_stripe, shake_shack, bajas, dolores, tallulahs, andreas, east_side_pocokets, heng, bess, lims, pizza_marvin, mikes, kabob_n_curry])
+dishRestaurantAll(seafood, [pasta_beach, al_forno, haruki, yans, chinatown, bajas, dolores, tallulahs])
+
+dishRestaurant(Type, Store) :- 
+    dishRestaurantAll(Type, Stores),
+    member(Store, Stores).
+
+locationOf(Type, Place, Store) :-
+    location(Place, Store),
+    dishRestaurant(Type, Store).
 
 /*Questions:
 1. location(X, wayland).
 2. cuisine(italian, X).
 3. serves(X, snapper).
 4. serves(X, rice).
-5. locType(vegetarian, fox_point, X).
+5. locationOf(vegetarian, fox_point, X).
 */
