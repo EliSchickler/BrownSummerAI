@@ -27,7 +27,6 @@ before(Class, Prereq) :-
     beforeAll(Class, Prereqs),
     member(Prereq, Prereqs).
 
-
 studentAll(mark, [cs15, cs16, cs17, cs18, cs32]).
 studentAll(elon, [cs15, cs16, cs17, cs22, cs141, cs33, cs166]).
 studentAll(sherylsandberg, [cs15, cs17, cs16, cs18, cs33, cs32, cs22]).
@@ -77,7 +76,3 @@ can_take(Name, Class) :-
     has_taken(Name, Prereq),
     Class \== cs126,
     Class \== cs141).
-
-
-
-
